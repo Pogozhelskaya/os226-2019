@@ -18,31 +18,31 @@ void os_sighnd(int sig, siginfo_t *info, void *ctx) {
 	if (0x338b == *(uint16_t *) uc->uc_mcontext.gregs[REG_RIP]) {
 		uc->uc_mcontext.gregs[REG_RDX] = 100000 + counter;
 		uc->uc_mcontext.gregs[REG_RIP] += 2;
-	} else if  (0x04738b && 0xffffff00 == *(uint32_t *) uc->uc_mcontext.gregs[REG_RIP]) {
+	} else if  (0x0004738b == *(uint32_t *) uc->uc_mcontext.gregs[REG_RIP] && 0x00ffffff) {
 		uc->uc_mcontext.gregs[REG_RDX] = 100000 + 1000 + counter;
 		uc->uc_mcontext.gregs[REG_RIP] += 3;
-	} else if  (0x08738b && 0xffffff00 == *(uint32_t *) uc->uc_mcontext.gregs[REG_RIP]) {
+	} else if  (0x0008738b == *(uint32_t *) uc->uc_mcontext.gregs[REG_RIP] && 0x00ffffff) {
 		uc->uc_mcontext.gregs[REG_RDX] = 100000 + 2000 + counter;
 		uc->uc_mcontext.gregs[REG_RIP] += 3;
-	} else if  (0x0c738b && 0xffffff00  == *(uint32_t *) uc->uc_mcontext.gregs[REG_RIP]) {
+	} else if  (0x000c738b == *(uint32_t *) uc->uc_mcontext.gregs[REG_RIP] && 0x00ffffff) {
 		uc->uc_mcontext.gregs[REG_RDX] = 100000 + 3000 + counter;
 		uc->uc_mcontext.gregs[REG_RIP] += 3;
-	} else if  (0x00758b && 0xffffff00  == *(uint32_t *) uc->uc_mcontext.gregs[REG_RIP]) {
+	} else if  (0x0000758b == *(uint32_t *) uc->uc_mcontext.gregs[REG_RIP] && 0x00ffffff) {
 		uc->uc_mcontext.gregs[REG_RDX] = 100000 + counter;
 		uc->uc_mcontext.gregs[REG_RIP] += 3;
-	} else if  (0x04758b && 0xffffff00  == *(uint32_t *) uc->uc_mcontext.gregs[REG_RIP]) {
+	} else if  (0x0004758b == *(uint32_t *) uc->uc_mcontext.gregs[REG_RIP] && 0x00ffffff) {
 		uc->uc_mcontext.gregs[REG_RDX] = 100000 + 1000 + counter;
 		uc->uc_mcontext.gregs[REG_RIP] += 3;
-	} else if  (0x08758b && 0xffffff00  == *(uint32_t *) uc->uc_mcontext.gregs[REG_RIP]) {
+	} else if  (0x0008758b == *(uint32_t *) uc->uc_mcontext.gregs[REG_RIP] && 0x00ffffff) {
 		uc->uc_mcontext.gregs[REG_RDX] = 100000 + 2000 + counter;
 		uc->uc_mcontext.gregs[REG_RIP] += 3;
-	} else if  (0x0c758b && 0xffffff00  == *(uint32_t *) uc->uc_mcontext.gregs[REG_RIP]) {
+	} else if  (0x000c758b == *(uint32_t *) uc->uc_mcontext.gregs[REG_RIP] && 0x00ffffff) {
 		uc->uc_mcontext.gregs[REG_RDX] = 100000 + 3000 + counter;
 		uc->uc_mcontext.gregs[REG_RIP] += 3;
 	} else if  (0x138b == *(uint16_t *) uc->uc_mcontext.gregs[REG_RIP]) {
 		uc->uc_mcontext.gregs[REG_RCX] = 100000 + counter;
 		uc->uc_mcontext.gregs[REG_RIP] += 2;
-	} else if  (0x10558b && 0xffffff00  == *(uint32_t *) uc->uc_mcontext.gregs[REG_RIP]) {
+	} else if  (0x0010558b == *(uint32_t *) uc->uc_mcontext.gregs[REG_RIP] && 0x00ffffff) {
 		uc->uc_mcontext.gregs[REG_RCX] = 100000 + 4000 + counter;
 		uc->uc_mcontext.gregs[REG_RIP] += 3;
 	}
