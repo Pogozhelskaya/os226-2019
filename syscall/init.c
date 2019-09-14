@@ -55,6 +55,6 @@ void init(void *base) {
 		.sa_sigaction = os_sighnd,
 		.sa_flags = SA_RESTART,
 	};
-	sigemptyset(&sigact.sa_mask);
+	sigemptyset(&act.sa_mask);
 	sigaction(SIGSEGV, &act, NULL);
 }
